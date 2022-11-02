@@ -250,9 +250,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127539713}
+  - component: {fileID: 127539714}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,6 +274,22 @@ Transform:
   m_Father: {fileID: 16284035}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &127539714
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127539712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008250356, y: 0.037126146}
+  m_Size: {x: 0.6980063, y: 1.0742524}
+  m_Direction: 0
 --- !u!1 &229501679
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,9 +415,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335535443}
+  - component: {fileID: 335535444}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,6 +439,22 @@ Transform:
   m_Father: {fileID: 16284035}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &335535444
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335535442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008250277, y: 0.033001028}
+  m_Size: {x: 0.6980061, y: 1.0660021}
+  m_Direction: 0
 --- !u!1 &347859809
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +485,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1451739996}
+  - {fileID: 1953375961}
   m_Father: {fileID: 2024874073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -466,10 +501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62645495c40628c48aa123c2183e5116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pizzaPosition: {fileID: 1953375961}
   upHandsSprite: {fileID: 21300000, guid: 3f6e7663ea85299469710810edc5009a, type: 3}
   downHandsSprite: {fileID: 21300000, guid: 795a976dd3b6afa4a9a4ec23922ac40e, type: 3}
   startOfTimeRange: 2
   endOfTimeRange: 10
+  levelMultiplier: 1
 --- !u!1 &414873049
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +806,7 @@ GameObject:
   - component: {fileID: 537598789}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +888,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0042845607, y: -0.00000007947286}
@@ -889,6 +926,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2635ce47f751a3649b856b462dd5be32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &590894046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590894048}
+  - component: {fileID: 590894047}
+  m_Layer: 0
+  m_Name: PizzaPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &590894047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590894046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c865fb916ed568543b6199a1e9fee373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaPrefab: {fileID: 134600594395672164, guid: d4af6983df6a4f84799ba79a3060d0cb, type: 3}
+  poolAmount: 10
+  isExtensible: 1
+--- !u!4 &590894048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590894046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625829991
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,9 +982,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625829992}
+  - component: {fileID: 625829993}
   m_Layer: 0
   m_Name: Center
-  m_TagString: Untagged
+  m_TagString: Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,6 +1006,53 @@ Transform:
   m_Father: {fileID: 16284035}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &625829993
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625829991}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0041251183, y: 0.045376383}
+  m_Size: {x: 0.67325544, y: 1.0907528}
+  m_Direction: 0
+--- !u!1 &687508686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687508687}
+  m_Layer: 0
+  m_Name: pizzaSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &687508687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687508686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1217239340}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724242136
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +1069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &724242137
 Transform:
   m_ObjectHideFlags: 0
@@ -946,12 +1078,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724242136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.80666673, y: -0.0066666603, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.98, y: -0.00999999, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1518745759}
-  m_Father: {fileID: 940314470}
+  - {fileID: 1786139415}
+  m_Father: {fileID: 2024874073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &724242138
@@ -966,10 +1099,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62645495c40628c48aa123c2183e5116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pizzaPosition: {fileID: 1786139415}
   upHandsSprite: {fileID: 21300000, guid: 3f6e7663ea85299469710810edc5009a, type: 3}
   downHandsSprite: {fileID: 21300000, guid: 795a976dd3b6afa4a9a4ec23922ac40e, type: 3}
   startOfTimeRange: 2
   endOfTimeRange: 10
+  levelMultiplier: 0
 --- !u!1 &940314469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1135,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 476879107}
-  - {fileID: 724242137}
+  - {fileID: 1865150567}
   m_Father: {fileID: 2024874073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1016,10 +1151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62645495c40628c48aa123c2183e5116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pizzaPosition: {fileID: 1865150567}
   upHandsSprite: {fileID: 21300000, guid: 3f6e7663ea85299469710810edc5009a, type: 3}
   downHandsSprite: {fileID: 21300000, guid: 795a976dd3b6afa4a9a4ec23922ac40e, type: 3}
   startOfTimeRange: 2
   endOfTimeRange: 10
+  levelMultiplier: 1
 --- !u!1 &1155700180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1271,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 61246174}
+  - {fileID: 687508687}
   m_Father: {fileID: 2024874073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1149,10 +1287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62645495c40628c48aa123c2183e5116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pizzaPosition: {fileID: 687508687}
   upHandsSprite: {fileID: 21300000, guid: 3f6e7663ea85299469710810edc5009a, type: 3}
   downHandsSprite: {fileID: 21300000, guid: 795a976dd3b6afa4a9a4ec23922ac40e, type: 3}
   startOfTimeRange: 2
   endOfTimeRange: 10
+  levelMultiplier: 1
 --- !u!1 &1328476880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1810,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1786139414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786139415}
+  m_Layer: 0
+  m_Name: pizzaSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786139415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786139414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 724242137}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796430327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1796430328
 Transform:
   m_ObjectHideFlags: 0
@@ -1700,6 +1871,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 449911062}
+  - {fileID: 1848475264}
   m_Father: {fileID: 2024874073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1715,10 +1887,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62645495c40628c48aa123c2183e5116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pizzaPosition: {fileID: 1848475264}
   upHandsSprite: {fileID: 21300000, guid: 3f6e7663ea85299469710810edc5009a, type: 3}
   downHandsSprite: {fileID: 21300000, guid: 795a976dd3b6afa4a9a4ec23922ac40e, type: 3}
   startOfTimeRange: 2
   endOfTimeRange: 10
+  levelMultiplier: 0
 --- !u!1 &1829889270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1926,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1848475263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848475264}
+  m_Layer: 0
+  m_Name: pizzaSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1848475264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848475263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796430328}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865150566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865150567}
+  m_Layer: 0
+  m_Name: pizzaSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865150567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865150566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 940314470}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1953375960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953375961}
+  m_Layer: 0
+  m_Name: pizzaSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953375961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953375960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 347859810}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024874072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +2048,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 940314470}
+  - {fileID: 724242137}
   - {fileID: 1217239340}
   - {fileID: 1796430328}
   - {fileID: 347859810}

@@ -5,38 +5,32 @@ using UnityEngine;
 
 public class Pizza : MonoBehaviour
 {
-    [SerializeField] private Transform startPosition;
+    [SerializeField] private float speed;
+    [SerializeField] private float throwingRange;
 
-    private void OnEnable()
+    private Rigidbody2D _rigidbody;
+    public bool go;
+   
+    private void Start() => _rigidbody = GetComponent<Rigidbody2D>();
+
+    public void Throw()
     {
-        Bully.OnPizzaThrow += PizzaThrow;
-        Bully.GetPizza += MakeNewPizza;
-    }
-    private void OnDisable()
-    {
-        Bully.OnPizzaThrow -= PizzaThrow;
-        Bully.GetPizza -= MakeNewPizza;
+        float randomX = UnityEngine.Random.Range(-throwingRange, throwingRange);
+        _rigidbody.velocity = new Vector3(randomX, -speed, 0);
     }
 
-    private void PizzaThrow()
-    {
-        //Go pizza Go
-    }
-    private void MakeNewPizza()
-    {
-        //get new pizza from pool
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Sword"))
         {
-            //return to pool
+            gameObject.SetActive(false);
+            //Score increase
         }
         if (collision.gameObject.CompareTag("Window"))
         {
             //Brake window
-            //Return to pool
+            gameObject.SetActive(false);
         }
     }
 }

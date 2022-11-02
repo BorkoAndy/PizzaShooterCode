@@ -11,5 +11,4 @@ public class SwordHit : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))  _animator.SetTrigger("Slice");            
     }
-
 }

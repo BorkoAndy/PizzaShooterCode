@@ -23,8 +23,5 @@ public class GrannyMove : MonoBehaviour
         // Keyboard move
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
             transform.Translate(inputHorizontal * speed * Time.deltaTime, 0, 0);
-            
-       
-
     }
 }
