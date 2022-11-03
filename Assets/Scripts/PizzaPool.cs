@@ -12,9 +12,9 @@ public class PizzaPool : MonoBehaviour
 
     private List<GameObject> pizzas;
    
-    private void Awake() => Instance = this;
+    private void OnEnable() => Instance = this;
 
-    private void Start()
+    private void Awake()
     {
         pizzas = new List<GameObject>();
 
